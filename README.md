@@ -1,65 +1,118 @@
-Documentación Breve – Aplicación Android de Registro de Recetas
-1. Descripción del Proyecto
-RecetasApp es una aplicación móvil desarrollada en Android Studio utilizando Kotlin y Jetpack Compose, cuyo objetivo es gestionar el registro de recetas de cocina. La aplicación permite agregar, visualizar y eliminar recetas de forma sencilla mediante una interfaz moderna basada en Material Design. Los requisitos establecidos incluyen el uso de LazyColumn, LazyRow, soporte para tema claro y oscuro y la funcionalidad de eliminación de recetas. 
-2. Tecnologías Utilizadas
-•	Android Studio
-•	Kotlin
-•	Jetpack Compose
-•	Material Design 3
-•	LazyColumn y LazyRow
-•	State Management de Compose
-Estas tecnologías fueron seleccionadas según los requisitos técnicos definidos para el trabajo práctico. 
-3. Estructura del Proyecto
-El proyecto está organizado de manera simple para facilitar su mantenimiento y comprensión:
+# RecetasApp 🍳 - Aplicación Android de Registro de Recetas
 
+Aplicación móvil desarrollada para Android utilizando **Kotlin** y **Jetpack Compose**, diseñada para gestionar el registro de recetas de cocina mediante una interfaz moderna basada en **Material Design 3**.
 
- 
-3.1. Descripción de los Componentes
-Componente	Descripción
-MainActivity	Punto de entrada de la aplicación.
-Receta.kt	Modelo de datos que representa una receta.
-RecetasScreen	Pantalla principal con formulario y listado.
-RecetaItem	Componente visual para mostrar cada receta.
-Theme.kt	Configuración de tema claro y oscuro.
-Color.kt	Definición de colores personalizados.
+Este proyecto cumple con los requisitos técnicos establecidos para el trabajo práctico, implementando componentes reactivos, listas optimizadas y soporte completo para temas visuales.
 
-4. Funcionamiento de la Aplicación
-La aplicación permite:
-Registrar Recetas
-El usuario ingresa:
-•	Nombre del plato
-•	Tiempo de preparación
-•	Dificultad
-•	Ingredientes principales
-•	Calorías por porción
-Estos datos son almacenados temporalmente en memoria y agregados a la lista visual de recetas. 
-Visualizar Recetas
-Las recetas se muestran mediante un LazyColumn, donde cada elemento contiene:
-•	Nombre del plato destacado.
-•	Información adicional presentada en un LazyRow.
-•	Botón para eliminar la receta. 
-Eliminar Recetas
-Cada receta posee un botón Eliminar que remueve el elemento seleccionado de la lista de forma inmediata.
-5. Temas de la Aplicación
-La aplicación implementa un tema personalizado basado en Material Design con soporte para:
-•	Modo Claro (Light Theme)
-•	Modo Oscuro (Dark Theme)
-El cambio de tema se adapta automáticamente a la configuración del dispositivo Android. 
+---
 
-6. Cómo Ejecutar la Aplicación
-Requisitos
-•	Android Studio Hedgehog o superior.
-•	SDK Android instalado.
-•	Emulador Android o dispositivo físico.
-Pasos para Ejecutar
-1.	Abrir Android Studio.
-2.	Seleccionar Open Project.
-3.	Abrir la carpeta del proyecto RecetasApp.
-4.	Esperar la sincronización de Gradle.
-5.	Ejecutar la aplicación presionando el botón Run (▶).
-6.	Seleccionar un emulador o dispositivo Android conectado.
-7.	Verificar que la aplicación se inicie correctamente.
+## 🛠️ Tecnologías Utilizadas
 
-7. Conclusión
-La aplicación RecetasApp cumple con los requerimientos del trabajo práctico al permitir registrar, visualizar y eliminar recetas mediante una interfaz desarrollada en Jetpack Compose. Además, implementa correctamente los componentes LazyColumn, LazyRow, así como los modos Light y Dark Theme, proporcionando una experiencia de usuario moderna y responsiva.
+*   **Lenguaje:** Kotlin
+*   **Framework de UI:** Jetpack Compose (Material Design 3)
+*   **Estructura de Datos en UI:** LazyColumn y LazyRow
+*   **Gestión de Estado:** State Management de Compose (`mutableStateOf`, `remember`)
+*   **IDE de Desarrollo:** Android Studio
 
+---
+
+## 📂 Estructura del Proyecto
+
+A continuación se detalla la estructura de paquetes y archivos del proyecto `com.recetasapp`:
+
+```text
+com.recetasapp
+│
+├── MainActivity.kt
+│
+├── model
+│   └── Receta.kt
+│
+├── viewmodel
+│   └── RecetaViewModel.kt
+│
+├── ui
+│   ├── screen
+│   │   └── RecetaScreen.kt
+│   │
+│   ├── components
+│   │   └── RecetaItem.kt
+│   │
+│   └── theme
+│       ├── Color.kt
+│       ├── Theme.kt
+│       └── Type.kt
+```
+
+### 3.1. Descripción de los Componentes
+
+| Componente | Descripción |
+| :--- | :--- |
+| **MainActivity** | Punto de entrada de la aplicación en Android. |
+| **Receta.kt** | Modelo de datos que representa una receta (nombre, tiempo, dificultad, ingredientes, calorías). |
+| **RecetaViewModel.kt**| Gestiona el estado de la aplicación y la lógica de negocio (agregar y eliminar recetas). |
+| **RecetaScreen.kt** | Pantalla principal que contiene el formulario de registro y el listado de recetas. |
+| **RecetaItem.kt** | Componente visual individual para mostrar la información detallada de cada receta. |
+| **Theme.kt** | Configuración de tema claro (Light Theme) y oscuro (Dark Theme). |
+| **Color.kt** | Definición de la paleta de colores personalizados para Material 3. |
+| **Type.kt** | Configuración tipográfica de la aplicación. |
+
+---
+
+## ⚙️ Funcionamiento de la Aplicación
+
+La aplicación permite realizar de forma dinámica las siguientes acciones:
+
+1.  **Registrar Recetas:**
+    El usuario ingresa a través del formulario:
+    *   Nombre del plato
+    *   Tiempo de preparación
+    *   Dificultad
+    *   Ingredientes principales
+    *   Calorías por porción
+    
+    *Los datos son almacenados temporalmente en memoria mediante el estado de Compose y se agregan reactivamente a la lista visual.*
+
+2.  **Visualizar Recetas:**
+    Las recetas registradas se despliegan eficientemente mediante un **LazyColumn**. Cada fila contiene:
+    *   Nombre del plato destacado.
+    *   Información adicional (tiempo, dificultad, calorías) presentada de forma horizontal en un **LazyRow**.
+    *   Un botón de acción directa para eliminar.
+
+3.  **Eliminar Recetas:**
+    Cada elemento del listado posee un botón **Eliminar** que remueve el objeto seleccionado de la lista mutable del estado de forma inmediata, actualizando la interfaz automáticamente.
+
+---
+
+## 🎨 Temas de la Aplicación
+
+La aplicación implementa un diseño responsivo y moderno adaptado a las directrices de **Material Design 3**, con soporte nativo para:
+
+*   **Modo Claro (Light Theme)**
+*   **Modo Oscuro (Dark Theme)**
+
+*El cambio de tema se adapta automáticamente según las preferencias globales del sistema del dispositivo Android.*
+
+---
+
+## 🚀 Cómo Ejecutar la Aplicación
+
+### Requisitos Previos
+*   **Android Studio** Hedgehog (2023.1.1) o superior.
+*   **SDK Android** instalado y configurado.
+*   **Emulador Android** (AVD) o un dispositivo físico con la Depuración USB activada.
+
+### Pasos para la Ejecución
+1.  Abrir **Android Studio**.
+2.  Seleccionar la opción **Open Project** (o *File > Open*).
+3.  Seleccionar la carpeta raíz del proyecto **RecetasApp**.
+4.  Esperar a que finalice el proceso de sincronización e indexación de **Gradle**.
+5.  Ejecutar la aplicación presionando el botón **Run** (▶) en la barra superior.
+6.  Seleccionar el emulador o el dispositivo físico conectado.
+7.  Verificar que la aplicación compile y se inicie correctamente en pantalla.
+
+---
+
+## 📝 Conclusión
+
+La aplicación **RecetasApp** cumple de forma íntegra con los requerimientos académicos establecidos. A través del uso de herramientas modernas como **Jetpack Compose**, la implementación de contenedores optimizados (**LazyColumn** y **LazyRow**), la correcta separación de responsabilidades y el soporte adaptativo para **Dark/Light Mode**, se logra un producto interactivo, eficiente y con una excelente experiencia de usuario.
