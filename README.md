@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# AppRecetas
-Aplicación para administrar recetas
-=======
 # RecetasApp 🍳 - Aplicación Android de Registro de Recetas
 
 Aplicación móvil desarrollada para Android utilizando **Kotlin** y **Jetpack Compose**, diseñada para gestionar el registro de recetas de cocina mediante una interfaz moderna basada en **Material Design 3**.
@@ -15,7 +11,7 @@ Este proyecto cumple con los requisitos técnicos establecidos para el trabajo p
 *   **Lenguaje:** Kotlin
 *   **Framework de UI:** Jetpack Compose (Material Design 3)
 *   **Estructura de Datos en UI:** LazyColumn y LazyRow
-*   **Gestión de Estado:** State Management de Compose (`mutableStateOf`, `remember`)
+*   **Gestión de Estado:** State Management de Compose (`mutableStateOf`, `remember`, `mutableStateListOf`) y `ViewModel`
 *   **IDE de Desarrollo:** Android Studio
 
 ---
@@ -75,16 +71,18 @@ La aplicación permite realizar de forma dinámica las siguientes acciones:
     *   Ingredientes principales
     *   Calorías por porción
     
-    *Los datos son almacenados temporalmente en memoria mediante el estado de Compose y se agregan reactivamente a la lista visual.*
+    Antes de registrar una receta, la aplicación verifica que todos los campos estén completos. También muestra mensajes breves para informar si faltan datos o si el registro se realizó correctamente.
+    
+    *Los datos son almacenados temporalmente en memoria mediante el estado de Compose y se agregan reactivamente a la lista visual. Después de un registro exitoso, los campos del formulario se limpian automáticamente.*
 
 2.  **Visualizar Recetas:**
     Las recetas registradas se despliegan eficientemente mediante un **LazyColumn**. Cada fila contiene:
     *   Nombre del plato destacado.
-    *   Información adicional (tiempo, dificultad, calorías) presentada de forma horizontal en un **LazyRow**.
+    *   Información adicional (tiempo, dificultad, ingredientes y calorías) presentada de forma horizontal en un **LazyRow** mediante componentes `AssistChip`.
     *   Un botón de acción directa para eliminar.
 
 3.  **Eliminar Recetas:**
-    Cada elemento del listado posee un botón **Eliminar** que remueve el objeto seleccionado de la lista mutable del estado de forma inmediata, actualizando la interfaz automáticamente.
+    Cada elemento del listado posee un botón **Eliminar**. Antes de remover la receta, la aplicación muestra un cuadro de diálogo de confirmación con las opciones **Sí** y **No**. Al confirmar, el objeto seleccionado se elimina de la lista mutable del estado y la interfaz se actualiza automáticamente.
 
 ---
 
@@ -120,4 +118,3 @@ La aplicación implementa un diseño responsivo y moderno adaptado a las directr
 ## 📝 Conclusión
 
 La aplicación **RecetasApp** cumple de forma íntegra con los requerimientos académicos establecidos. A través del uso de herramientas modernas como **Jetpack Compose**, la implementación de contenedores optimizados (**LazyColumn** y **LazyRow**), la correcta separación de responsabilidades y el soporte adaptativo para **Dark/Light Mode**, se logra un producto interactivo, eficiente y con una excelente experiencia de usuario.
->>>>>>> a0418b44e6c1f100e409997f23214e03478024f5
