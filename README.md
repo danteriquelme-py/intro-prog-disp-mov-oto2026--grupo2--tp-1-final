@@ -119,5 +119,5 @@ La aplicación implementa un diseño responsivo y moderno adaptado a las directr
 
 ## 📝 Conclusión
 
-La aplicación **RecetasApp** cumple de forma íntegra con los requerimientos académicos establecidos. A través del uso de herramientas modernas como **Jetpack Compose**, la implementación de contenedores optimizados (**LazyColumn** y **LazyRow**), la correcta separación de responsabilidades y el soporte adaptativo para **Dark/Light Mode**, se logra un producto interactivo, eficiente y con una excelente experiencia de usuario.
+La aplicación **RecetasApp** Cumple plenamente con los requerimientos académicos establecidos. A través del uso de herramientas modernas como **Jetpack Compose**, la implementación de contenedores optimizados (**LazyColumn** y **LazyRow**), la correcta separación de responsabilidades y el soporte adaptativo para **Dark/Light Mode**, se logra un producto interactivo, eficiente y con una excelente experiencia de usuario. 
 >>>>>>> a0418b44e6c1f100e409997f23214e03478024f5
