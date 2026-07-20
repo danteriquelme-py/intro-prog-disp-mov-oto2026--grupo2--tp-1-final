@@ -2,7 +2,7 @@
 # AppRecetas
 Aplicación para administrar recetas
 =======
-# RecetasApp 🍳 - Aplicación Android de Registro de Recetas
+# RecetasApp 🍳 - Aplicación Android de Registro de Recetas.
 
 Aplicación móvil desarrollada para Android utilizando **Kotlin** y **Jetpack Compose**, diseñada para gestionar el registro de recetas de cocina mediante una interfaz moderna basada en **Material Design 3**.
 
